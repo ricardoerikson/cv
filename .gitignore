@@ -2,4 +2,7 @@
 *.aux
 *.pdf
 *.dvi
-
+*.fdb_latexmk
+*.out
+*.synctex.gz
+*.fls
