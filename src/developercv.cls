@@ -49,7 +49,7 @@
 \usepackage{geometry} % Required for adjusting page dimensions and margins
 
 \geometry{
-	paper=a4paper, % Paper size, change to letterpaper for US letter size
+  paper=a4paper, % Paper size, change to letterpaper for US letter size
 	top=1.75cm, % Top margin
 	bottom=1.75cm, % Bottom margin
 	left=2cm, % Left margin
@@ -58,33 +58,36 @@
 	footskip=1cm, % Space from the bottom margin to the baseline of the footer
 	headsep=0.5cm, % Space from the top margin to the baseline of the header
 	%showframe, % Uncomment to show how the type block is set on the page
-}
-
-%----------------------------------------------------------------------------------------
-%	FONTS
-%----------------------------------------------------------------------------------------
-
-\usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage[T1]{fontenc} % Output font encoding for international characters
-
-\usepackage[default]{raleway}
-%\usepackage[defaultsans]{droidsans}
-%\usepackage{cmbright}
-%\usepackage{fetamont}
-%\usepackage[default]{gillius}
-%\usepackage{roboto}
-
-\renewcommand*\familydefault{\sfdefault} % Force the sans-serif version of any font used
-
-%------------------------------------------------
+  }
+  
+  %----------------------------------------------------------------------------------------
+  %	FONTS
+  %----------------------------------------------------------------------------------------
+  
+  \usepackage[utf8]{inputenc} % Required for inputting international characters
+  \usepackage[T1]{fontenc} % Output font encoding for international characters
+  
+  \usepackage[default]{raleway}
+  % \usepackage[defaultsans]{droidsans}
+  % \usepackage{cmbright}
+  % \usepackage{fetamont}
+  % \usepackage[default]{gillius}
+  % \usepackage{roboto}
+  
+  \renewcommand*\familydefault{\sfdefault} % Force the sans-serif version of any font used
+  
+  %------------------------------------------------
+  % Colors
+  \usepackage{xcolor}
+  \definecolor{bluecv}{HTML}{3182ce}
 
 \usepackage{fontawesome} % Required for FontAwesome icons
 
 % Command to output an icon in a black square box with text to the right
 \newcommand{\icon}[3]{% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-	\vcenteredhbox{\colorbox{black}{\makebox(#2, #2){\textcolor{white}{\large\csname fa#1\endcsname}}}}% Icon and box
-	\hspace{0.2cm}% Whitespace
-	\vcenteredhbox{\textcolor{black}{#3}}% Text
+	\vcenteredhbox{\colorbox{white}{\makebox(#2, #2){\textcolor{gray}{\large\csname fa#1\endcsname}}}}% Icon and box
+	\hspace{0.1cm}% Whitespace
+	\vcenteredhbox{\textcolor{gray}{#3}}% Text
 }
 
 %----------------------------------------------------------------------------------------
@@ -102,67 +105,34 @@
 	\endgroup%
 }
 
+
 %----------------------------------------------------------------------------------------
-%	CHARTS
+%	SKILLS
 %---------------------------------------------------------------------------------------- 
-
-\newcounter{barcount}
-
-% Environment to hold a new bar chart
-\newenvironment{barchart}[1]{ % The only parameter is the maximum bar width, in cm
-	\newcommand{\barwidth}{0.35}
-	\newcommand{\barsep}{0.2}
-	
-	% Command to add a bar to the bar chart
-	\newcommand{\baritem}[2]{ % The first argument is the bar label and the second is the percentage the current bar should take up of the total width
-		\pgfmathparse{##2}
-		\let\perc\pgfmathresult
-		
-		\pgfmathparse{#1}
-		\let\barsize\pgfmathresult
-		
-		\pgfmathparse{\barsize*##2/100}
-		\let\barone\pgfmathresult
-		
-		\pgfmathparse{(\barwidth*\thebarcount)+(\barsep*\thebarcount)}
-		\let\barx\pgfmathresult
-		
-		\filldraw[fill=black, draw=none] (0,-\barx) rectangle (\barone,-\barx-\barwidth);
-		
-		\node [label=180:\colorbox{black}{\textcolor{white}{##1}}] at (0,-\barx-0.175) {};
-		\addtocounter{barcount}{1}
-	}
-	\begin{tikzpicture}
-		\setcounter{barcount}{0}
+\newenvironment{skills}{
+  \newcommand{\skillset}[2]{\textbf{##1} & ##2\\}
+  \setlength{\arrayrulewidth}{0.5mm}
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{rl}    
+    }{
+    \end{tabular}
+    }
+%----------------------------------------------------------------------------------------
+%	LIST
+%---------------------------------------------------------------------------------------- 
+% Environment to hold a new list of entries
+\newenvironment{contributionlist}{
+  \newcommand{\contribution}[1]{
+    \parbox[t]{0.02\textwidth}{ \textbullet }%
+    &
+    \parbox[t]{0.8\textwidth}{ ##1 }\\}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{ll}
 }{
-	\end{tikzpicture}
+	\end{tabular}
 }
 
-%------------------------------------------------
 
-\newcounter{a}
-\newcounter{b}
-\newcounter{c}
-
-% Command to output a number of automatically-sized bubbles from a string in the format of '<size>/<label>', e.g. \bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}
-\newcommand{\bubbles}[1]{
-	% Reset counters
-	\setcounter{a}{0}
-	\setcounter{c}{150}
-	
-	\begin{tikzpicture}[scale=3]
-		\foreach \p/\t in {#1} {
-			\addtocounter{a}{1}
-			\bubble{\thea/2}{\theb}{\p/25}{\t}{1\p0}
-		}
-	\end{tikzpicture}
-}
-
-% Command to output a bubble at a specific position with a specific size
-\newcommand{\bubble}[5]{
-	\filldraw[fill=black, draw=none] (#1,0.5) circle (#3); % Bubble
-	\node[label=\textcolor{black}{#4}] at (#1,0.7) {}; % Label
-}
 
 %----------------------------------------------------------------------------------------
 %	CUSTOM SECTIONS

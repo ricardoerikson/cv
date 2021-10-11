@@ -1,74 +1,54 @@
 \documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
 
-%----------------------------------------------------------------------------------------
-
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	TITLE AND CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
+\begin{minipage}[t]{0.7\textwidth}
+  % \vspace{-\baselineskip} % Required for vertically aligning minipages
 
-\begin{minipage}[t]{0.4\textwidth} % 45% of the page width for name
-  \vspace{-\baselineskip} % Required for vertically aligning minipages
-
-  % If your name is very short, use just one of the lines below
-  % If your name is very long, reduce the font size or make the minipage wider and reduce the others proportionately
-  \colorbox{white}{{\HUGE\textcolor{black}{\textbf{\MakeUppercase{Ricardo}}}}} % First name
-
-  \colorbox{white}{{\HUGE\textcolor{black}{\textbf{\MakeUppercase{Erikson}}}}} % Last name
-
-  \vspace{6pt}
+  {\HUGE\textbf{\MakeUppercase{Ricardo Erikson}}}
+  \vspace{5pt}
 
   {\huge Senior Software Engineer} % Career or current job title
+
+  \icon{MapMarker}{8}{Teresina, PI, Brazil}\\
+
 \end{minipage}
-\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the first row of icons
+\begin{minipage}[t]{0.3\textwidth}
   \vspace{-\baselineskip} % Required for vertically aligning minipages
 
-  % The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-  % Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
-  \icon{MapMarker}{12}{Brazil}\\
-  \icon{Phone}{12}{+55 92 98226 1492}\\
-  \icon{At}{12}{\href{mailto:ricardo@ricardoerikson.me}{ricardo@ricardoerikson.me}}\\
-\end{minipage}
-\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
-  \vspace{-\baselineskip} % Required for vertically aligning minipages
-
-  % The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-  % Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
-  \icon{Globe}{12}{\href{https://ricardoerikson.me}{ricardoerikson.me}}\\
-  \icon{Github}{12}{\href{https://github.com/ricardoerikson}{github.com/ricardoerikson}}\\
-  % \icon{Twitter}{12}{\href{https://twitter.com/@ricardoerikson}{@alyxvance}}\\
+  \icon{Phone}{8}{+55 92 98226 1492}\\
+  \icon{At}{8}{\href{mailto:ricardo@ricardoerikson.me}{ricardo@ricardoerikson.me}}\\
+  \icon{Globe}{8}{\href{https://ricardoerikson.me}{ricardoerikson.me}}\\
+  \icon{Github}{8}{\href{https://github.com/ricardoerikson}{github.com/ricardoerikson}}\\
+  \icon{Linkedin}{8}{\href{https://linkedin.com/in/ricardoerikson}{linkedin.com/in/ricardoerikson}}\\
 \end{minipage}
 
 \vspace{0.5cm}
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION, SKILLS AND TECHNOLOGIES
-%----------------------------------------------------------------------------------------
 
 \cvsect{Who Am I?}
 
-\begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
-  \vspace{-\baselineskip} % Required for vertically aligning minipages
+\begin{minipage}[t]{\textwidth}
+  % \vspace{-\baselineskip} % Required for vertically aligning minipages
 
-  \lorem \lorem \lorem \lorem \lorem\\ % Dummy text
+  I have 15 years of experience working as a software engineer. I've had the opportunity to collaborate with key players of the software industry by building software for the web, mobile devices, distributed systems, and cloud environments. I'm looking for positions to evolve my career and skills with the following stack: Golang, Python, Javascript, TypeScript, Angular, React, AWS, and Docker.
 \end{minipage}
-\hfill % Whitespace between
-\begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
-  \vspace{-\baselineskip} % Required for vertically aligning minipages
-  \begin{barchart}{5.5}
-    \baritem{JavaScript}{60}
-    \baritem{PHP}{100}
-    \baritem{SASS/LESS}{70}
-    \baritem{Bootstrap}{70}
-    \baritem{Git}{40}
-    \baritem{LaTeX}{60}
-  \end{barchart}
-\end{minipage}
+% \hfill % Whitespace between
 
-\begin{center}
-  \bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}
-\end{center}
+\cvsect{Top Technical Skills}
+
+\begin{minipage}[t]{\textwidth}
+  % \vspace{-\baselineskip} % Required for vertically aligning minipages
+
+  \begin{skills}
+    \skillset{Languages}{Golang, Python, JavaScript, TypeScript}
+    \skillset{Cloud (AWS)}{Cognito, EC2, ECR, CodeArtifact, CodeBuild, CodeDeploy, CodePipeline, RDS}
+    \skillset{Databases}{MSSQL, MySQL, MariaDB, Postgres}
+    \skillset{Frontend}{ReactJS, Angular}
+    \skillset{CSS}{Bootstrap, Tailwind}
+    \skillset{Other}{Docker, Git}
+  \end{skills}
+\end{minipage}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
@@ -78,20 +58,75 @@
 
 \begin{entrylist}
   \entry
-  {2017 -- 3/2018}
-  {Front-end developer}
-  {Big Corporation Name Inc.}
-  {\lorem \lorem \lorem\\ \texttt{node.js}\slashsep\texttt{Vue.js}\slashsep\texttt{Electron}}
+  {2/2021 -- present\\\footnotesize{Remote}\\\footnotesize{Part time}}
+  {Front-end Engineer | DevOps Engineer}
+  {Furukawa Electric LatAm}
+  {Working as a front-end engineer using Angular and building CI/CD pipelines. Key achievements:\\
+    \begin{contributionlist}
+      \contribution{Built the authentication workflow using AWS Cognito.}
+      \contribution{Built the deployment pipeline using AWS cloud environment.}
+    \end{contributionlist}\\
+    \texttt{Angular}\slashsep\texttt{AWS}\slashsep\texttt{Linux}}
   \entry
-  {2015 -- 2018\\\footnotesize{part time}}
-  {Full stack developer}
-  {Famous Eshop Inc.}
-  {\lorem\lorem\\ \texttt{PHP}\slashsep\texttt{JS}\slashsep\texttt{MariaDB}\slashsep\texttt{Linux}}
+  {11/2020 -- present\\\footnotesize{Remote}}
+  {Tech Lead | Golang Engineer}
+  {BairesDev Inc.}
+  {Working with the Abbott's US cloud solutions team (BairesDev's client). Key achievements:\\
+    \begin{contributionlist}
+      % \contribution{helped the team to develop and maintain the API and the asynchronous services (messaging platform) of a scalable and high-traffic distributed system.}
+      \contribution{Reduced the overall system overload by splitting long-running operations into batches of smaller ones.}
+      \contribution{Improved the API security by identifying and fixing brute force attack vulnerabilities.}
+    \end{contributionlist}\\
+    \texttt{Golang}\slashsep\texttt{Docker}\slashsep\texttt{EC2}\slashsep\texttt{Python}}
+  \entry{8/2016 -- 10/2020}
+  {Sabbatical | Ph.D. Research | Trading Career}
+  {}
+  {
+    I took a professional sabbatical to improve my academic qualifications and apply my programing knowledge to other areas. Key achievements:\\
+    \begin{contributionlist}
+      \contribution{Developed a 4-year Ph.D. research in the area of recommender systems where I had the opportunity to use Python (Pandas, NumPy, SciPy, and scikit-learn) to perform extensive data analysis and data visualization to build recommendation models.}
+      \contribution{Started a career in the financial market as a sole trader exploring algorithmic trading and building data analysis tools with Python.}
+    \end{contributionlist}\\
+    \texttt{Python}\slashsep\texttt{Flask}\slashsep\texttt{Pandas}\slashsep\texttt{NumPy}\slashsep\texttt{Docker}\slashsep\texttt{Angular}}
+  \entry{6/2015 -- 7/2016\\\footnotesize{Manaus, AM, Brazil}}
+  {Senior Software Engineer}
+  {IATECAM}
+  {
+    Worked as a senior software engineer, full-stack web developer in web projects using Java, and PHP. Key achievements:\\
+    \begin{contributionlist}
+      \contribution{Participated in key projects that helped the company to achieve the Level G of the MPS.BR, a QA certification program created by SOFTEX.}
+      \contribution{Helped to define source code comment styling and a branching model to track project features from requirements to source code using Git.}
+    \end{contributionlist}\\
+    \texttt{Java}\slashsep\texttt{PHP}\slashsep\texttt{JavaScript}\slashsep\texttt{Angular}}
   \entry
-  {2013 -- 2014\\\footnotesize{part time}}
-  {Junior PHP Developer}
-  {example.com}
-  {\lorem\lorem\\ \texttt{PHP}\slashsep\texttt{Laravel}}
+  {3/2008 -- 5/2015\\\footnotesize{Manaus, AM, Brazil}\\\footnotesize{Part-time}}
+  {Research Assistant}
+  {Digital Television Laboratory - UFAM}
+  {Worked as a research assistant of the Special Interest Group on Software Engineering, Embedded Systems and Automation (SEESA) at the Digital Television Laboratory.}
+  \entry{11/2013-3/2015\\\footnotesize{Manaus, AM, Brazil}}
+  {Lead Software Engineer}
+  {CETELI -- Samsung R\&D Center}
+  {
+    Worked as a technical lead in software projects for mobile and web platforms. Responsible for technical decisions with Java, JavaScript, HTML, CSS, and PHP. Key achievements:\\
+    \begin{contributionlist}
+      \contribution{Built the configuration management process, and the infrastructure for the CI/CD pipelines.}
+    \end{contributionlist}\\
+    \texttt{Java}\slashsep\texttt{PHP}\slashsep\texttt{JavaScript}\slashsep\texttt{Android}}
+  \entry{4/2010 -- 8/2012\\\footnotesize{Manaus, AM, Brazil}}
+  {Tech Lead}
+  {CETELI -- Nokia Institute of Technology}
+  {
+    Worked as a tech lead in software projects for mobile devices. Key achievements:\\
+    \begin{contributionlist}
+      \contribution{Coordinated and developed 30 mobile apps for Nokia devices (published in the Nokia Ovi Store).}
+    \end{contributionlist}\\
+    \texttt{Qt}\slashsep\texttt{QML}\slashsep\texttt{JavaScript}\slashsep\texttt{HTML}\slashsep\texttt{CSS}}
+  \entry{8/2007 -- 2/2008\\\footnotesize{Teresina, PI, Brazil}}
+  {Freelance Web Developer}
+  {Mundi Tecnologia}
+  {Worked as a web developer using technologies such as PHP,
+    HTML, CSS, and JavaScript.\\
+    \texttt{PHP}\slashsep\texttt{JavaScript}\slashsep\texttt{HTML}\slashsep\texttt{CSS}}
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
@@ -102,20 +137,20 @@
 
 \begin{entrylist}
   \entry
-  {2013 -- 2017}
-  {Master's Degree}
-  {Another University Name}
-  {\lorem\lorem\lorem}
+  {02/2021\\\footnotesize{Belo Horizonte, \\MG, Brazil}}
+  {Ph.D Degree in Electrical Engineering}
+  {Federal University of Minas Gerais}
+  {Area: Recommender Systems}
   \entry
-  {2014}
-  {Postgraduate Diploma}
-  {A University Name}
-  {\lorem\lorem}
+  {08/2010\\\footnotesize{Manaus, AM, Brazil}}
+  {Master's Degree in Electrical Engineering}
+  {Federal University of Amazonas}
+  {Area: Software Components and Design Patterns}
   \entry
-  {2007 -- 2013}
-  {Bachelor's Degree}
-  {A University Name}
-  {\lorem\lorem}
+  {12/2006\\\footnotesize{Teresina, PI, Brazil}}
+  {Technologist Degree in Systems Analysis and Development}
+  {Federal Institute of Technology of Piauí}
+  {Area: Digital Television}
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
@@ -127,27 +162,11 @@
 
   \cvsect{Languages}
 
-  \textbf{English} - native\\
-  \textbf{German} - proficient\\
-  \textbf{Polish} - rudimentary
+  \begin{skills}
+    \skillset{Portuguese}{native}
+    \skillset{English}{full professional}
+    \skillset{German}{elementary}
+  \end{skills}
 \end{minipage}
-\hfill
-\begin{minipage}[t]{0.3\textwidth}
-  \vspace{-\baselineskip} % Required for vertically aligning minipages
-
-  \cvsect{Hobbies}
-
-  I love... \lorem
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.3\textwidth}
-  \vspace{-\baselineskip} % Required for vertically aligning minipages
-
-  \cvsect{Non profit}
-
-  I help... \lorem
-\end{minipage}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
