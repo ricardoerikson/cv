@@ -7,3 +7,6 @@
 *.synctex.gz
 *.fls
 node_modules
+
+# generated files
+!dist/*.pdf

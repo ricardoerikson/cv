@@ -10,7 +10,8 @@ module.exports = {
       "assets": ["dist/*.pdf"]
     }],
     ['@semantic-release/git', {
-      "message": "Release <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> [skip ci]\n\n<%= nextRelease.notes %>"
+      "assets": ["dist/*.pdf"],
+      "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
     }]
   ]
 }
