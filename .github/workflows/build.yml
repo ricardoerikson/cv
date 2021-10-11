@@ -6,15 +6,27 @@ on:
     branches: [main]
 
 jobs:
+  configure:
+    runs-on: ubuntu-latest
+    outputs:
+      containerUser: ${{ steps.get-user.outputs.containerUser }}
+    steps:
+      - id: get-user
+        run: echo "::set-output name=containerUser::`id -u`:`id -g`"
+
   build:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
-    container: ricardoerikson/cv:latest
+    needs: configure
+    container: 
+      image: ricardoerikson/cv:latest
+      options: --user ${{ needs.configure.outputs.containerUser }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Node.js setup
         uses: actions/setup-node@v2
         with:
@@ -26,5 +38,8 @@ jobs:
       - name: Release and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npx semantic-release
+          GIT_AUTHOR_NAME: ${{ secrets.AUTHOR_NAME }}
+          GIT_AUTHOR_EMAIL: ${{ secrets.AUTHOR_EMAIL }}
+          GIT_COMMITTER_NAME: ${{ secrets.AUTHOR_NAME }}
+          GIT_COMMITTER_EMAIL: ${{ secrets.AUTHOR_EMAIL }}
+        run: npx semantic-release
