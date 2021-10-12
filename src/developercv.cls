@@ -113,7 +113,7 @@
   \newcommand{\skillset}[2]{\textbf{##1} & ##2\\}
   \setlength{\arrayrulewidth}{0.5mm}
   \setlength{\tabcolsep}{3pt}
-  \begin{tabular}{rl}    
+  \begin{tabular}{ll}    
     }{
     \end{tabular}
     }
