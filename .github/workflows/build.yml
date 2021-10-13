@@ -3,7 +3,11 @@
 name: build-cv
 on:
   push:
-    branches: [main]
+    branches: 
+      - main
+      - en-wp
+      - pt-br
+      - pt-br-wp
 
 jobs:
   configure:
@@ -35,7 +39,16 @@ jobs:
         run: npm i
       - name: Build PDF
         run: make build
+      - name: Commit PDF
+        if: ${{ github.ref != 'refs/heads/main' }}
+        run: |
+          git config user.name "${{ github.event.pusher.name }}"
+          git config user.email "${{ github.event.pusher.email }}"
+          git add dist/*.pdf
+          git commit -m "update file"
+          git push origin ${GITHUB_REF##*/}
       - name: Release and deploy
+        if: ${{ github.ref == 'refs/heads/main' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: ${{ secrets.AUTHOR_NAME }}
