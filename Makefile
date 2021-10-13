@@ -1,8 +1,13 @@
 
 SRC := main.tex
 OUTPUT := main.pdf
-TARGET := cv-ricardo-erikson.pdf
+BASENAME := cv-ricardo-erikson
 TMP := aux log out
+LANG := $(shell [ `git branch --show-current` = "main" ] && echo en || echo `git branch --show-current`)
+TARGET = $(BASENAME)-$(LANG).pdf
+
+show-lang:
+	@echo $(TARGET)	
 
 build-image:
 	docker build -t ricardoerikson/cv:latest .
