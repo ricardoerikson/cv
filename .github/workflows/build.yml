@@ -46,6 +46,7 @@ jobs:
           git config user.email "${{ github.event.pusher.email }}"
           git add dist/*.pdf
           git commit -m "update file"
+          git config remote.origin.url 'https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}'
           git push origin ${GITHUB_REF##*/}
       - name: Release and deploy
         if: ${{ github.ref == 'refs/heads/main' }}
