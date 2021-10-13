@@ -45,8 +45,8 @@ jobs:
           git config user.name "${{ github.event.pusher.name }}"
           git config user.email "${{ github.event.pusher.email }}"
           git add dist/*.pdf
-          git commit -m "update file"
-          git config remote.origin.url 'https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}'
+          git commit -m "update file [skip ci]"
+          git config remote.origin.url 'https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}'
           git push origin ${GITHUB_REF##*/}
       - name: Release and deploy
         if: ${{ github.ref == 'refs/heads/main' }}
