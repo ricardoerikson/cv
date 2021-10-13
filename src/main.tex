@@ -2,22 +2,32 @@
 
 \begin{document}
 
-\begin{minipage}[t]{0.6\textwidth}
+\begin{minipage}[t]{0.8\textwidth}
   \vspace{-\baselineskip} % Required for vertically aligning minipages
 
   {\HUGE\textbf{\MakeUppercase{Ricardo Erikson}}}
   \vspace{5pt}
 
   {\huge Senior Software Engineer} % Career or current job title
-
-  \icon{MapMarker}{8}{Teresina, PI, Brazil}\\
-
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.2\textwidth}
   \vspace{-\baselineskip} % Required for vertically aligning minipages
 
+  \begin{tikzpicture}[baseline=(pic.center),inner sep=0pt]
+    \clip (0,0)  circle (1.5cm) node (pic) {\includegraphics[width=3cm]{pic.jpg}};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[t]{0.4\textwidth}
+  \vspace{-2.5\baselineskip} % Required for vertically aligning minipages
+
+  \icon{MapMarker}{8}{Teresina, PI, Brazil}\\
   \icon{Phone}{8}{+55 92 98226 1492}\\
   \icon{At}{8}{\href{mailto:ricardo@ricardoerikson.me}{ricardo@ricardoerikson.me}}\\
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+  \vspace{-2.5\baselineskip} % Required for vertically aligning minipages
+
   \icon{Globe}{8}{\href{https://ricardoerikson.me}{ricardoerikson.me}}\\
   \icon{Github}{8}{\href{https://github.com/ricardoerikson}{github.com/ricardoerikson}}\\
   \icon{Linkedin}{8}{\href{https://linkedin.com/in/ricardoerikson}{linkedin.com/in/ricardoerikson}}\\

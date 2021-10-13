@@ -94,8 +94,10 @@
 %	GRAPHICS DEFINITIONS
 %---------------------------------------------------------------------------------------- 
 
+\usepackage{graphicx}
 \usepackage{tikz} % Required for creating the plots
-\usetikzlibrary{shapes, backgrounds}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{shapes, backgrounds, calc}
 \tikzset{x=1cm, y=1cm} % Default tikz units
 
 % Command to vertically centre adjacent content
